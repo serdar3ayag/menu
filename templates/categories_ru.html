@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css'%}">
+    <title>Rmenu</title>
+</head>
+<body>
+    <a href="{% url 'main' %}" class="previous_c">&laquo; </a>
+    <p class="text">Категории</p>
+
+    
+    <div class="container">
+    {% for cat in categories %}
+    {% if cat.image %}
+            <a href="{% url 'dishes_ru' cat.pk %}">
+                <div class="cat_box_im", style="background-image: url('{{ cat.image.url }}');">
+                    {{cat.name_ru}}
+            </div>
+        </a>
+        {% else %}
+        <a href="{% url 'dishes_ru' cat.pk %}">
+            <div class="cat_box">
+            {{cat.name_ru}}
+        </div>
+    </a>
+        {% endif %}
+    {% endfor %}
+
+</div>
+</body>
+</html>

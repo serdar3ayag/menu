@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css'%}">
+    <title>Rmenu</title>
+</head>
+<body>
+    
+    <H1>МЕНЮ</H1>
+    <div class="logoh">
+        <img src="{% static 'logo.png'%}" alt="try again" class="logo">
+        </div>
+    <div class="text">
+    <span>Выберите язык/Choose the language </span><br>
+    <a href="{% url 'cat_ru' %}" ><center><span class="lang">Русский</span></center></a>
+    <a href="{% url 'cat_en' %}" ><center><span class="lang">English</span></center></a>
+
+</div>
+
+    <div class="line">
+        <marquee direction="left" scrollamount="5"> | | связаться с нами/contact us | | </marquee> 
+    </div>
+
+    <div class="table">
+    <div class="contact">
+    <i class="fa-brands fa-instagram"></i>
+    <i class="fa-brands fa-tiktok"></i>
+    <i class="fa-solid fa-phone"></i>
+</div>
+
+<div class="contact">
+    @rmenu
+    @rmenu_tt
+    +993????????
+</div>
+</div>
+    
+<footer>
+    <a href="{% url 'cv'%}"> powered by Me</a>
+</footer>
+
+
+</body>
+</html>
+
+

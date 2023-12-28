@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css'%}">
+    <title>Rmenu</title>
+</head>
+<body>
+
+    <header>
+        <a href="{% url 'cat_ru' %}" class="previous">&laquo; </a>
+        {% for cat in categories %}
+        <a href="{% url 'dishes_ru' cat.pk %}"> {{cat.name_ru}} </a>
+        {%endfor%}
+    </header>
+
+    
+    {% for dish in dishes %}
+    <span class="dish">
+        <span><i>{{dish.name_ru}}</i></span>
+        <span class="price"><b>{{dish.price}} TMT</b></span>
+    </span><br>
+    {%endfor%}
+</body>
+</html>
